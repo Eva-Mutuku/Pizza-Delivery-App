@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("select").click(function) {
+  $("select").click(function() {
     var option = $(":selected").val();
     if(option === "Meat") {
       $(".meat-options").show();
@@ -15,5 +15,5 @@ $(document).ready(function() {
       $(".custom-option").show();
     }
 
-  }
-})
+  });
+});
