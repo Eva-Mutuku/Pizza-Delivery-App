@@ -7,7 +7,6 @@
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Amaranth|Great+Vibes|Lobster&display=swap" rel="stylesheet">
-  <script src="js/script.js"></script>
   <title>Your Style Pizza</title>
 </head>
 <body>
@@ -25,25 +24,26 @@
     <div class = "card">
       <div class = "Make your order">
         <form name = "Order" action = "">
-            <div class = "row">
-              <div class = "col-sm-12 col-md-6 col-lg-3">
-                <select name = "In-house selection" id="In-house">
-                  <option value = "1">Meat Options</option>
-                  <div class="radio">
-                      <p id="Chicago" type="radio" value="Chicago-Pizza">Chicago-Pizza<br>
-                        <p id="NYC" type="radio" value="NYC-Pizza">NYC-Pizza<br>
-                        <p id="Neapolitan" type="radio" value="Neapolitan-Pizza">Neapolitan-Pizza<br>
-                        <p id="Pepperoni" type="radio" value="Pepperoni-Pizza">Pepperoni-Pizza<br>  
+            <!-- <div class = "row"> -->
+              <!-- <div class = "col-sm-12 col-md-6 col-lg-3"> -->
+                <select name = "In-house-selection" id="Pizza-selection">
+                  <option value = "Meat">Meat</option>
+                  <option value = "Veggie">Vegetarinean</option>
+                  <option value = "Custom">Assemble-your-own</option>
+                </select>
+                  <div class="meat-options radio">
+                        <p id="Chicago" name = "Pizza-selection" type="radio" value="Chicago-Pizza">Chicago-Pizza<br>
+                        <p id="NYC" name = "Pizza-selection" type="radio" value="NYC-Pizza">NYC-Pizza<br>
+                        <p id="Neapolitan" name = "Pizza-selection" type="radio" value="Neapolitan-Pizza">Neapolitan-Pizza<br>
+                        <p id="Pepperoni" name = "Pizza-selection" type="radio" value="Pepperoni-Pizza">Pepperoni-Pizza<br>  
                   </div>
-                  <option value = "2">Veggie Options</option>
-                  <div class="radio">
-                        <p id="Hawaiian" type="radio" value="Hawaiian-Pizza">Hawaiian-Pizza<br>
-                        <p id="Greek" type="radio" value="Greek-Pizza">Greek-Pizza<br>
-                        <p id="Mediterranean" type="radio" value="Mediterranean-Pizza">Mediterranean-Pizza<br>
-                        <p id="Tasty-tomato" type="radio" value="Tasty-tomato-Pizza">Tasty-tomato-Pizza<br> 
+                  <div class="veggie-options radio">
+                        <p id="Hawaiian" name = "Pizza-selection" type="radio" value="Hawaiian-Pizza">Hawaiian-Pizza<br>
+                        <p id="Greek" name = "Pizza-selection" type="radio" value="Greek-Pizza">Greek-Pizza<br>
+                        <p id="Mediterranean" name = "Pizza-selection" type="radio" value="Mediterranean-Pizza">Mediterranean-Pizza<br>
+                        <p id="Tasty-tomato" name = "Pizza-selection" type="radio" value="Tasty-tomato-Pizza">Tasty-tomato-Pizza<br> 
                   </div>
-                  <option value = "3">Assemble-your-own</option>
-                  <div class = " row Assembling-choices">
+                  <div class = " row custom-option">
                     <div class = col-md-4>
                         <div id=" Crust">
                             <p id="thin-crusted" type="radio" value="Hawaiian-Pizza">Thin crust<br>
@@ -101,8 +101,8 @@
                   </div>
                 </select>
 
-              </div>
-            </div>
+              <!-- </div>
+            </div> -->
         </form>
          
           
@@ -115,6 +115,7 @@
     <div class = "Social Icons">
 
   </div>
-  
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

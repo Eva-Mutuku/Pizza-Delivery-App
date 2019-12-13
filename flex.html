@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+    <select name="pizzas" id="pizza">
+      <option value="Meat">Meat Options</option>
+      <option value="Veggie">Veggie Options</option>
+      <option value="Custom">Assemble your own</option>
+    </select>
+    <div class="meat-opt">
+      <input type="radio" name="pizza" value="Meat" />Meat<br />
+      <input type="radio" name="pizza" value="Beef" />Beef<br />
+      <input type="radio" name="pizza" value="Chicken" />Chicken
+    </div>
+    <div style="display: none;" class="veggie-opt">
+      <input type="radio" name="pizza" value="Hawain" />Hawain<br />
+      <input type="radio" name="pizza" value="Mediteranian" />Mediteranian<br />
+      <input type="radio" name="pizza" value="Greek" />Greek
+    </div>
+    <div style="display: none;" class="custom-opt">
+      <input type="radio" name="pizza" value="xxxxx" />xxxxx<br />
+      <input type="radio" name="pizza" value="yyyyy" />yyyyy<br />
+      <input type="radio" name="pizza" value="zzzzz" />zzzzz
+    </div>
+    </form>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="flex.js"></script>
+  </body>
+</html>
