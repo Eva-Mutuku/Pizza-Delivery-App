@@ -24,13 +24,28 @@
     <div class = "card">
       <div class = "Make your order">
         <form name = "Order" action = "">
-            <!-- <div class = "row"> -->
-              <!-- <div class = "col-sm-12 col-md-6 col-lg-3"> -->
+            <!-- <div class = "row"> 
+              <div class = "col-sm-12 col-md-6 col-lg-3"> -->
                 <select name = "In-house-selection" id="Pizza-selection">
                   <option value = "Meat">Meat</option>
                   <option value = "Veggie">Vegetarinean</option>
                   <option value = "Custom">Assemble-your-own</option>
                 </select>
+                <select name = "Pizza-Size" id="Pizza-size">
+                    <Option value="Kids' size">Kids' size</Option>
+                    <Option value="Medium">Medium</Option>
+                    <Option value="Large">Large</Option>
+                    <Option value="Family size">Family size</Option>
+                  </select> 
+                <select name = "Extras" id="Extra-toppings">
+                    <p>Extra toppings?<br>
+                    <Option value="Cheese">Cheese</Option>
+                    <Option value="Sun-dried Tomatoes">Sun-dried Tomatoes</Option>
+                    <Option value="Black Olives">Black Olives</Option>
+                    <Option value="Basil">Basil</Option>
+                    <Option value="Grilled Egg-plant">Grilled Egg-plant</Option>
+                    <Option value="Roasted Green Pepper">Roasted Green Pepper</Option>
+                  </select>
                   <div  style="display: none;" class="meat-options">
                         <input id="Chicago" name = "Pizza-selection" type="radio" value="Chicago-Pizza">Chicago-Pizza<br>
                         <input id="NYC" name = "Pizza-selection" type="radio" value="NYC-Pizza">NYC-Pizza<br>
@@ -44,14 +59,6 @@
                         <input id="Tasty-tomato" name = "Pizza-selection" type="radio" value="Tasty-tomato-Pizza">Tasty-tomato-Pizza<br> 
                   </div>
                   <div style="display: none;" class = "custom-option row">
-                    <!-- <div class = col-md-4>
-                        <div id=" Crust">
-                            <p id="thin-crusted" type="radio" value="Hawaiian-Pizza">Thin crust<br>
-                            <p id="thick-crusted" type="radio" value="Greek-Pizza">Thick crust<br>
-                            <p id="deep-crust" type="radio" value="Mediterranean-Pizza">Deep crust<br>
-                            <p id="stuffed-crust" type="radio" value="Tasty-tomato-Pizza">Stuffed crust<br> 
-                        </div>
-                    </div> -->
                     <div class = col-md-4>
                         <div id=" Crust">
                           <h5 style="text-align: left;">Type of Crust</h5>
@@ -90,8 +97,8 @@
                                     <input type="checkbox" name="Mushrooms" value="Mushrooms">Mushrooms<br>
                                     <input type="checkbox" name="Tomatoes" value="Sun-dried Tomatoes">Sun-dried Tomatoes<br>
                                     <input type="checkbox" name="Olives" value="Black Olives">Black Olives<br>
-                                    <input type="checkbox" name="Basil" value="Basil">Basil<br>
-                                    <input type="checkbox" name="Egg-plant" value="Grilled Egg-plant">Grilled Egg-plant<br>
+                                    <input type="checkbox" name="Basil" value="Basil">Beef<br>
+                                    <input type="checkbox" name="Egg-plant" value="Grilled Egg-plant">Pepperoni<br>
                                     <input type="checkbox" name="Green-pepper" value="Roasted Green Pepper">Roasted Green Pepper<br>
                                   </p>
                               </div>   
@@ -100,12 +107,11 @@
                     </div>    
                   </div>
                 </select>
-
               <!-- </div>
             </div> -->
-        </form>
-         
-          
+        </form>  
+
+
       </div>
     </div>
 
