@@ -58,9 +58,17 @@ $('[data-quantity="minus"]').click(function(e) {
   var veggieToppings = ["mushrooms", "tomatoes", "olives", "basil", "egg-plant", "green-pepper"];
   var extraToppings = ["cheese", "olives", "basil", "onions", "pepper"];
 
-   function customPizzaOrder(crustType, pizzaSize, toppings) {
+  function pizzaSizePricing () {
+    var kidSize = 500;
+    var medium = 700;
+    var large = 1000;
+    var familySize = 1200;
+  }
+  function customPizzaOrder(crustType, pizzaSize, toppings, quantity) {
       this.crustType = crustType;
       this.pizzaSize = pizzaSize;
       this.toppings = toppings;
+      this.qunatity = quantity;
    }
+
 });
