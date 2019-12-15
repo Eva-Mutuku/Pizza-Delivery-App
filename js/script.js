@@ -1,3 +1,32 @@
+//Array for different items in each selection
+var pizzaSize = ["kidSize", "medium", "large", "familySize"];
+var pizzaSizePrices = ["500", "700", "1000", "1200"];
+var crustType = ["thin-crusted", "thick crusted", "deep-crust", "stuffed crust"];
+var meatToppings = ["bacon", "beef", "sausage", "ham", "pepperoni", "chicken"];
+var seafoodToppings = ["shrimp", "anchovies", "oysters", "sardines", "tuna"];
+var veggieToppings = ["mushrooms", "tomatoes", "olives", "basil", "egg-plant", "green-pepper"];
+var extraToppings = ["cheese", "olives", "basil", "onions", "pepper"];
+var pizzaTypes = {
+  meat: ["Chicago", "Neopolitan", "NYC", "Pepperoni"],
+  veggie: ["Hawaiian", "Greek-Mama-Pizza", "Mediterranean", "Tasty-Tomato"]
+}
+var pizzaCrustPrices = pizzaSizePrices.map(function(pizzaSizePrice) {
+  return pizzaSizePrice + 200;
+});
+
+function customPizzaOrder(crustType, pizzaSize, toppings, quantity) {
+    this.crustType = crustType;
+    this.pizzaSize = pizzaSize;
+    this.toppings = toppings;
+    this.quantity = quantity;
+ }
+ customPizzaOrder.prototype.price = function () {
+   var option = $(":selected").val();
+  if(option === "Meat" || option === "Veggie") {
+    cost = this.pizzaSizePricing() 
+  }
+ }
+
 $(document).ready(function() {
    // This button will increment the value
    $('[data-quantity="plus"]').click(function(e){
@@ -33,7 +62,7 @@ $('[data-quantity="minus"]').click(function(e) {
         $('input[name='+fieldName+']').val(0);
     }
 });
-
+//Select pizza, size and toppings options
   $("select").click(function() {
     var option = $(":selected").val();
     if(option === "Meat") {
@@ -50,25 +79,4 @@ $('[data-quantity="minus"]').click(function(e) {
       $(".custom-option").show();
     }
   });
-
-  var crustType = ["thin-crusted", "thick crusted", "deep-crust", "stuffed crust"];
-  var pizzaSize = ["kidSize", "medium", "large", "familySize"];
-  var meatToppings = ["bacon", "beef", "sausage", "ham", "pepperoni", "chicken"];
-  var seafoodToppings = ["shrimp", "anchovies", "oysters", "sardines", "tuna"];
-  var veggieToppings = ["mushrooms", "tomatoes", "olives", "basil", "egg-plant", "green-pepper"];
-  var extraToppings = ["cheese", "olives", "basil", "onions", "pepper"];
-
-  function pizzaSizePricing () {
-    var kidSize = 500;
-    var medium = 700;
-    var large = 1000;
-    var familySize = 1200;
-  }
-  function customPizzaOrder(crustType, pizzaSize, toppings, quantity) {
-      this.crustType = crustType;
-      this.pizzaSize = pizzaSize;
-      this.toppings = toppings;
-      this.qunatity = quantity;
-   }
-
 });
