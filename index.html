@@ -10,14 +10,13 @@
   <title>Your Style Pizza</title>
 </head>
 <body>
-  <div class = "Header">
+  <div class="Container">
+  <div class = "Header jumbotron">
     <div class = "navbar">
-      <ul>
-          <li><a href ="index.html">Home</a></li>
-          <li><a href ="about-us.html">About Us</a></li>
-          <li><a href ="pizza-options.html">Our Pizza options</a></li>
-          <li><a href ="Contact-Us.html">Contact Us</a></li>
-      </ul> 
+          <a href ="index.html">Home</a>
+          <a href ="about-us.html">About Us</a>
+          <a href ="pizza-options.html">Our Pizza options</a>
+          <a href ="Contact-Us.html">Contact Us</a>
     </div>
   </div>
   <div class = "body container">
@@ -35,7 +34,7 @@
                     <Option value="Large">Large @ 1000/= </Option>
                     <Option value="Family-size">Family size @ 1200/= </Option>
                   </select> <br>
-                Any extra toppings? <select name = "Extras" id="Extra-toppings">
+                Any extra toppings? <select name = "Extras" id="ExtraToppings">
                     <Option value="Cheese">Cheese @ 100/= </Option>
                     <Option value="Tomatoes">Sun-dried Tomatoes @ 50/=</Option>
                     <Option value="Olives">Black Olives @ 200/= </Option>
@@ -46,7 +45,7 @@
                     <Option value="Pineapple">Roasted Pineapple chunks @ 80/= </Option>
                   </select>
                   <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
-                  <div class = "Pizza-quantity">
+                  <div class = "PizzaQuantity">
                       <input id="quantity" type="number">
                   </div>
 
@@ -127,7 +126,8 @@
 
   <div class = "Footer">
     <div class = "Social Icons">
-
+  </div>
+  </div>
   </div>
   <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>

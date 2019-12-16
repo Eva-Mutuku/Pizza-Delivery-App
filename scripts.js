@@ -185,7 +185,7 @@ $(function () {
                   break; 
             }
             break;
-    switch (Extra-toppings) {
+    switch (ExtraToppings) {
       case topping = "Cheese":
         totalPrice = totalPrice + 100;
         break;
