@@ -13,10 +13,14 @@ $(document).ready(function(){
   TypeOfPizza = $(":selected").val();
  }
 
- //Hiding summary and contact info
- $(function () {
-  $('.orderSummary').hide();
-  $('.customerContactDetails').hide();
+ //Reveal order summary upon clicking make order.
+ $(".pizza-order").Click(function () {
+  $('.orderSummary').show();
+ })
+
+ $(".Delivery").Click(function () {
+  $('.customerContactDetails').show();
+ })
   
   //Get inputs
   $("#checkout").click(function () {

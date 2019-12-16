@@ -36,8 +36,11 @@ body {
   margin-right: 10%;
   margin-bottom: 2%;
 }
+.Custom-PreferredToppings {
+  display: none;
+}
 .orderSummary {
-  /* display:none; */
+  display:none;
   margin-right: 20%;
   margin-left:2%;
   margin-bottom: 2%;
@@ -49,6 +52,6 @@ body {
   float: right;
 }
 .customerContactDetails {
-  /* display:none; */
+  display:none;
 }
 .
