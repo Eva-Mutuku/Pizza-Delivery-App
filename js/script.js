@@ -1,6 +1,14 @@
 //Array for different items in each selection
 var pizzaSize = ["kidSize", "medium", "large", "familySize"];
 var pizzaSizePrices = ["500", "700", "1000", "1200"];
+
+pizzaSizes.forEach(function(PizzaSize) {
+  return pizzaSize;
+});
+
+alert(pizzaSize);
+
+})["500", "700", "1000", "1200"];
 var crustType = ["thin-crusted", "thick-crusted", "deep-crust", "stuffed crust"];
 var meatToppings = ["bacon", "beef", "sausage", "ham", "pepperoni", "chicken"];
 var seafoodToppings = ["shrimp", "anchovies", "oysters", "sardines", "tuna"];
@@ -10,6 +18,20 @@ var pizzaTypes = {
   meat: ["Chicago", "Neopolitan", "NYC", "Pepperoni"],
   veggie: ["Hawaiian", "Greek-Mama-Pizza", "Mediterranean", "Tasty-Tomato"]
 }
+
+var pizzaSize = {
+  name:("kidsize"), price="500",
+  name:"medium", price="700",
+  name:"large", price="1000",
+  name:"familySize", price="1200",
+}
+var pizzaSize = {
+  name:"kidsize", price="500",
+  name:"medium", price="700",
+  name:"large", price="1000",
+  name:"familySize", price="1200",
+}
+
 var pizzaCrustPrices = pizzaSizePrices.map(function(pizzaSizePrice) {
   return pizzaSizePrice + 200;
 });
