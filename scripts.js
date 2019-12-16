@@ -208,6 +208,32 @@ $(function () {
         totalPrice = totalPrice + 100;
         break;
     }
+    switch (Toppings) {
+      case topping = "Cheese":
+        totalPrice = totalPrice + 100;
+        break;
+      case topping = "Tomatoes":
+        totalPrice = totalPrice + 50;
+        break;
+      case topping = "Olives":
+        totalPrice = totalPrice + 200;
+        break;
+      case topping = "Basil":
+        totalPrice = totalPrice + 100;
+        break;
+      case topping = "Onions":
+        totalPrice = totalPrice + 50;
+        break;
+      case topping = "Pepper":
+        totalPrice = totalPrice + 50;
+        break;
+      case topping = "Pineapple":
+        totalPrice = totalPrice + 50;
+        break;
+      case topping = "bacon":
+        totalPrice = totalPrice + 100;
+        break;
+    }
 
 
 $(document).ready(function() {
