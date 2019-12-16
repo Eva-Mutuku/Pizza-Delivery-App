@@ -57,3 +57,7 @@ body {
 .customerContactDetails {
   display:none;
 }
+.Footer {
+  color: black;
+  justify-content: center;
+}
