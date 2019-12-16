@@ -23,15 +23,16 @@ $(document).ready(function(){
  })
   
   //Get inputs
-  $("#checkout").click(function () {
-    let TypeOfPizza = $("#Pizza-selection:selected").val();
-    let size = $("#Pizza-size:selected").val();
-    let crust = $("#Crust:selected").val();
-    let toppings = $("#Toppings:selected").val();
-    let extraToppings = $("#Extra-toppings:selected").val();
-    let PizzaQuantity = $("#quantity").val();
-    console.log(size);
+  // $("#checkout").click(function () {
+  //   let TypeOfPizza = $("#Pizza-selection:selected").val();
+  //   let size = $("#Pizza-size:selected").val();
+  //   let crust = $("#Crust:selected").val();
+  //   let toppings = $("#Toppings:selected").val();
+  //   let extraToppings = $("#Extra-toppings:selected").val();
+  //   let PizzaQuantity = $("#quantity").val();
+  //   console.log(size);
 
+ //Create summary 
  $('#list').text(" ");
  $("#list").append("<br>" + "TypeOfPizza :   " + newOrder.TypeOfPizza + 
  "<br>" + "Size :   " + newOrder.size + "<br>" + 
@@ -40,7 +41,7 @@ $(document).ready(function(){
  " Extra Toppings :    " + newOrder.ExtraToppings + "<br>" + 
  "Total Price :  " + newOrder.total + "<br><br>").css('font-family', 'system-ui').css('font-size', '24px');
 
-        Write to the order
+//Write to the order
  $('.summary').slideDown( + extraToppingsTotalPrize0);
  $('.cdata-overlay').slideUp();
  $('#list').slideDown();
