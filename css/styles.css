@@ -14,6 +14,12 @@ body {
   margin-right:10%;
   float: left;
 }
+.our-story {
+  width: 50%;
+  background-color: white;
+  opacity:0.9;
+  margin: 15% 25%;
+}
 .MakeYourOrder {
   margin-right: 20%;
   margin-left:2%;
