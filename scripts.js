@@ -42,29 +42,41 @@ $(function () {
             }
             break;
           case size = "medium":
-            price = 600;
-            if (crust === "thin") {
+            price = 1000;
+            if (crust === "thin-crusted") {
+              totalPrice = (price * number);
+            } else if (crust === "thick-crusted") {
               totalPrice = (price * number) + 100;
-            } else if (crust === "thick") {
+            } else if (crust === "deep-crust") {
               totalPrice = (price * number) + 150;
-            } else if (crust === "flatbread") {
-              totalPrice = (price * number) + 180;
             } else {
-              totalPrice = (price * number) + 280;
+              totalPrice = (price * number) + 200;
             }
             break;
           case size = "large":
             price = 1200;
-            if (crust === "thin") {
+            if (crust === "thin-crusted") {
+              totalPrice = (price * number);
+            } else if (crust === "thick-crusted") {
               totalPrice = (price * number) + 100;
-            } else if (crust === "thick") {
+            } else if (crust === "deep-crust") {
               totalPrice = (price * number) + 150;
-            } else if (crust === "flatbread") {
-              totalPrice = (price * number) + 180;
             } else {
-              totalPrice = (price * number) + 280;
+              totalPrice = (price * number) + 200;
             }
             break;
+            case size = "Family-size":
+              price = 1200;
+              if (crust === "thin-crusted") {
+                totalPrice = (price * number);
+              } else if (crust === "thick-crusted") {
+                totalPrice = (price * number) + 100;
+              } else if (crust === "deep-crust") {
+                totalPrice = (price * number) + 150;
+              } else {
+                totalPrice = (price * number) + 200;
+              }
+              break; 
         }
         break;
       case flavour = "chickentikka":
