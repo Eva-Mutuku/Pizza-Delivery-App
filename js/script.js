@@ -1,7 +1,7 @@
 //Array for different items in each selection
 var pizzaSize = ["kidSize", "medium", "large", "familySize"];
 var pizzaSizePrices = ["500", "700", "1000", "1200"];
-var crustType = ["thin-crusted", "thick crusted", "deep-crust", "stuffed crust"];
+var crustType = ["thin-crusted", "thick-crusted", "deep-crust", "stuffed crust"];
 var meatToppings = ["bacon", "beef", "sausage", "ham", "pepperoni", "chicken"];
 var seafoodToppings = ["shrimp", "anchovies", "oysters", "sardines", "tuna"];
 var veggieToppings = ["mushrooms", "tomatoes", "olives", "basil", "egg-plant", "green-pepper"];
