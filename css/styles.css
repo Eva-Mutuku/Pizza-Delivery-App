@@ -12,15 +12,17 @@ h1 {
 
 }
 .navbar {
-  
+  display:flex;
 }
 .card {
   display: flex;
   justify-content: space-between;
   background-color: white;
   opacity:0.9;
-  margin-right:10%;
+  margin-right:20%;
   float: left;
+  /* padding-left: 20px;
+  padding-right: 25px; */
 }
 .our-story {
   width: 50%;
@@ -28,6 +30,9 @@ h1 {
   opacity:0.9;
   margin: 15% 25%;
 }
+/* .form-group {
+  width: 40%;
+} */
 .orderInput {
   background-color: white;
   opacity:0.9;
@@ -49,18 +54,20 @@ h1 {
   margin-left:2%;
   margin-bottom: 2%;
 }
-.ExtraToppings {
+#pizzaCrust {
   margin-right: 10%;
   margin-left:2%;
   margin-bottom: 2%;
 }
-.PizzaQuantity {
+.pizzaToppings {
   margin-right: 10%;
   margin-left:2%;
   margin-bottom: 2%;
 }
-.Custom-PreferredToppings {
-  display: none;
+.pizzaCount {
+  margin-right: 10%;
+  margin-left:2%;
+  margin-bottom: 2%;
 }
 .orderSummary {
   display:none;
@@ -76,8 +83,4 @@ h1 {
 }
 .customerContactDetails {
   display:none;
-}
-.Footer {
-  color: black;
-  justify-content: center;
 }
