@@ -1,5 +1,5 @@
 body {
-  background-image: url(/images/background.jpg);
+  background-image: url(/images/pizza-background.jpg);
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -8,28 +8,42 @@ body {
   background-color: wheat;
 }
 .card {
-  width: 40%;
+  width: 30%;
+  background-color: white;
+  opacity:0.9;
+  margin-right:10%;
 }
-.plus-minus-input {
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+.MakeYourOrder {
+  margin-right: 20%;
+  margin-left:2%;
+  margin-bottom: 2%;
 }
+#PizzaSelection {
+  margin-right: 10%;
+  margin-left:2%;
+  margin-bottom: 2%;
+}
+#PizzaSize {
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
+.ExtraToppings {
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
+.PizzaQuantity {
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
+.orderSummary {
+  /* display:none; */
+  margin-right: 20%;
+  margin-left:2%;
+  margin-bottom: 2%;
+  margin-top: 1%;
+  background-color: white;
+  opacity:0.9;
+  width:30%;
+  height:flex;
 
-.plus-minus-input .input-group-field {
-  text-align: center;
-  margin-left: 0.5px;
-  margin-right: 0.5px;
-  /* padding: 0.2px; */
-}
-
-.plus-minus-input .input-group-field::-webkit-inner-spin-button,
-.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-          appearance: none;
-}
-
-.plus-minus-input .input-group-button .circle {
-  border-radius: 50%;
-  padding: 0.25em 0.8em;
 }
