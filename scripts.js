@@ -39,7 +39,7 @@ $(document).ready(function(){
  "Crust :     " + newOrder.crust + "<br>" + 
  " PizzaQuantity of pizzas :    " + newOrder.PizzaQuantity + "<br>" + 
  " Extra Toppings :    " + newOrder.ExtraToppings + "<br>" + 
- "Total Price :  " + newOrder.total + "<br><br>").css('font-family', 'system-ui').css('font-size', '24px');
+ "Total Price :  " + newOrder.TotalPrice + "<br><br>").css('font-family', 'system-ui').css('font-size', '24px');
 
 //Write to the order
  $('.summary').slideDown( + extraToppingsTotalPrize0);
