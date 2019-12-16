@@ -12,14 +12,18 @@ $(function () {
     console.log(size);
 
     //Function order
-    function order(TypeOfPizza, size, crust, PizzaQuantity, ExtraToppings, Total){
+    function order(TypeOfPizza, size, crust, PizzaQuantity, ExtraToppings, TotalPrice){
         this.TypeOfpizza = TypeOfPizza;
         this.size = size;
         this.crust = crust;
         this.ExtraToppings = ExtraToppings;
         this.PizzaQuantity = PizzaQuantity;
-        this.total = total;
+        this.TotalPrice = TotalPrice;
       };
+
+      //Execute order function
+      let newOrder = order(TypeOfPizza, size, crust, PizzaQuantity, ExtraToppings, TotalPrice);
+      console.log(newOrder); 
 
     //check price
     let price, totalPrice;
@@ -211,12 +215,27 @@ $(function () {
         totalPrice = totalPrice + 100;
         break;
     }
+     $('#list').text(" ");
+     $("#list").append("<br>" + "TypeOfPizza :   " + newOrder.TypeOfPizza + 
+     "<br>" + "Size :   " + newOrder.size + "<br>" + 
+     "Crust :     " + newOrder.crust + "<br>" + 
+     " Number of pizzas :    " + newOrder.PizzaQuantity + "<br>" + 
+     " Extra Toppings :    " + newOrder.ExtraToppings + "<br>" + 
+     "Total Price :  " + newOrder.total + "<br><br>").css('font-family', 'system-ui').css('font-size', '24px');
+
+            //Write to the order
+    //  $('.summary').slideDown(2000);
+    //  $('.cdata-overlay').slideUp();
+    //  $('#list').slideDown();
+    //  $('.deliver').show(1000);
+    //  $('.delivernot').show(1000);
+ 
 
 
 //User Interface
 //Select pizza, size and toppings options
  $("select").click(function(event) {
-   e.preventDefault();
+   event.preventDefault();
    var option = $(":selected").val();
    if(option === "Meat") {
      $(".meat-options").show();
@@ -231,15 +250,15 @@ $(function () {
      $(".veggie-options").hide();
      $(".custom-option").show();
    }
- });
- $(".pizza-order").submit(function(event) {
-  // a constructor to define data needed in ordering pizzas
-  function PizzaOrder(size, crust, toppings, quantity) {
-    this.size = size;
-    this.crust = crust;
-    this.toppings = toppings;
-    this.quantity = quantity;
-  }
-});
+  });
 
-});
+   $(".pizza-order").submit(function(event) {
+    // a constructor to define data needed in ordering pizzas
+    function PizzaOrder(size, crust, toppings, quantity) {
+      this.size = size;
+      this.crust = crust;
+      this.toppings = toppings;
+      this.quantity = quantity;
+    }
+  });
+

@@ -12,6 +12,7 @@ body {
   background-color: white;
   opacity:0.9;
   margin-right:10%;
+  float: left;
 }
 .MakeYourOrder {
   margin-right: 20%;
@@ -45,5 +46,10 @@ body {
   opacity:0.9;
   width:30%;
   height:flex;
-
+  float: right;
 }
+.customerContactDetails {
+  /* display:none; */
+  
+}
+.
