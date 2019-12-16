@@ -12,17 +12,14 @@ $(function () {
     console.log(size);
 
     //Function order
-    let order = (TypeOfPizza, size, crust, toppings, number,extraToppings, Total) => {
-      return {
-        TypeOfpizza,
-        size,
-        crust,
-        toppings,
-        number,
-        extraToppings,
-        total
+    function order(TypeOfPizza, size, crust, PizzaQuantity, ExtraToppings, Total){
+        this.TypeOfpizza = TypeOfPizza;
+        this.size = size;
+        this.crust = crust;
+        this.ExtraToppings = ExtraToppings;
+        this.PizzaQuantity = PizzaQuantity;
+        this.total = total;
       };
-    };
 
     //check price
     let price, totalPrice;
@@ -130,9 +127,12 @@ $(function () {
                 }
                 break; 
           } break;
+          //calculate total prize for toppings under custom order.
           var toppings = $(".Toppings input:checked");
           var Toppingprizes = toppings.map(topping => parseInt(topping.val()));
           var ToppingsTotalPrize = ToppingsPrizes.reduce(acc, cur => acc+cur);
+
+          //calculate total prize for custom order
           case TypeOfPizza = "Custom":
             switch (size) {
               case size = "kidsize":
@@ -211,6 +211,8 @@ $(function () {
         totalPrice = totalPrice + 100;
         break;
     }
+
+
 //User Interface
 //Select pizza, size and toppings options
  $("select").click(function(event) {
