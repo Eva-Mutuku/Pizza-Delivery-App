@@ -26,14 +26,17 @@ body {
 }
 #PizzaSize {
   margin-right: 10%;
+  margin-left:2%;
   margin-bottom: 2%;
 }
 .ExtraToppings {
   margin-right: 10%;
+  margin-left:2%;
   margin-bottom: 2%;
 }
 .PizzaQuantity {
   margin-right: 10%;
+  margin-left:2%;
   margin-bottom: 2%;
 }
 .Custom-PreferredToppings {
