@@ -23,22 +23,19 @@
   <div class = "body container">
     <div class = "card">
       <div class = "Make your order">
-        <form name = "Order" action = "">
-            <!-- <div class = "row"> 
-              <div class = "col-sm-12 col-md-6 col-lg-3"> -->
-                <select name = "TypeOfPizza" id="Pizza-selection">
+        <form name = "form-reg" action = "">
+                Choose your pizza<select name = "TypeOfPizza" id="Pizza-selection">
                   <option value = "Meat">Meat</option>
                   <option value = "Veggie">Vegetarinean</option>
                   <option value = "Custom">Assemble-your-own</option>
                 </select><br>
-                <select name = "Pizza-Size" id="Pizza-size">
+                What size would you like?<select name = "Pizza-Size" id="Pizza-size">
                     <Option value="Kids'-size">Kids' size @ 500/=</Option>
                     <Option value="Medium">Medium @ 700/= </Option>
                     <Option value="Large">Large @ 1000/= </Option>
                     <Option value="Family-size">Family size @ 1200/= </Option>
                   </select> <br>
-                <select name = "Extras" id="Extra-toppings">
-                    <p>Extra toppings?<br>
+                Any extra toppings? <select name = "Extras" id="Extra-toppings">
                     <Option value="Cheese">Cheese @ 100/= </Option>
                     <Option value="Tomatoes">Sun-dried Tomatoes @ 50/=</Option>
                     <Option value="Olives">Black Olives @ 200/= </Option>
@@ -49,7 +46,12 @@
                     <Option value="Pineapple">Roasted Pineapple chunks @ 80/= </Option>
                   </select>
                   <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
-<div class="input-group plus-minus-input">
+                  <div class = "Pizza-quantity">
+                      <input id="quantity" type="number">
+                  </div>
+                    
+
+                  <!-- <div class="input-group plus-minus-input">
     <div class="input-group-button">
       <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
         <i class="fa fa-minus" aria-hidden="true"></i>
@@ -61,7 +63,7 @@
         <i class="fa fa-plus" aria-hidden="true"></i>
       </button>
     </div>
-  </div> 
+  </div>  -->
   <div class="pizza-order form-group">
       <button type="submit" class="btn btn-outline-warning">
         Place Order!
@@ -90,7 +92,7 @@
                         </div>
                     </div>
                     <div class = col-md-4>
-                        <div id="Toppings">
+                        <div class="Toppings">
                             <h5 style="text-align: center;">Preferred Toppings</h5>
                             <div class="row">
                               <div class="col">
