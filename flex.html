@@ -2,181 +2,146 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Amaranth|Great+Vibes|Lobster&display=swap" rel="stylesheet" />
-    <title>Your Style Pizza</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Downtown Pizza</title>
   </head>
-
   <body>
-    <div class="Container">
+    <div class="container">
       <div class="Header jumbotron">
         <div class="navbar">
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About Us</a>
-          <a href="pizza-options.html">Our Pizza options</a>
-          <a href="Contact-Us.html">Contact Us</a>
+          <a href="index.html">Home</a> <a href="about-us.html">About Us</a>
+          <a href="pizza-options.html">Our Pizza options</a> <a href="Contact-Us.html">Contact Us</a>
         </div>
       </div>
-      <form name="form-reg" id="orderForm">
-        Choose your pizza
-        <select>
-          <optgroup label="Meat">
-            <option id="Chicago" name="Pizza-selection" type="radio" value="Chicago-Pizza">Chicago-Pizza</option>
-            <br />
-            <option id="NYC" name="Pizza-selection" type="radio" value="NYC-Pizza">NYC-Pizza </option><br />
-            <option id="Neapolitan" name="Pizza-selection" type="radio" value="Neapolitan-Pizza"
-              >Neapolitan-Pizza
-            </option>
-            <br />
-            <option id="Pepperoni" name="Pizza-selection" type="radio" value="Pepperoni-Pizza">Pepperoni-Pizza </option>
-            <br />
-          </optgroup>
-          <optgroup label="Veggie">
-            <option id="Hawaiian" name="Pizza-selection" type="radio" value="Hawaiian-Pizza">Hawaiian-Pizza </option
-            ><br />
-            <option id="Greek-Mama" name="Pizza-selection" type="radio" value="Greek-Pizza">Greek-Mama-Pizza </option
-            ><br />
-            <option id="Mediterranean" name="Pizza-selection" type="radio" value="Mediterranean-Pizza">
-              Mediterranean-Pizza</option
-            ><br />
-            <option id="Tasty-tomato" name="Pizza-selection" type="radio" value="Tasty-tomato-Pizza">
-              Tasty-tomato-Pizza</option
-            ><br />
-          </optgroup>
-          <optgroup label="customOrder:Crust">
-            <option id="thin-crusted" name="Pizza-selection" type="radio" value="Thin">Thin crust</option><br />
-            <option id="thick-crusted" name="Pizza-selection" type="radio" value="Thick">Thick crust</option><br />
-            <option id="deep-crust" name="Pizza-selection" type="radio" value="Deep">Deep crust</option><br />
-            <option id="stuffed-crust" name="Pizza-selection" type="radio" value="Stuffed">Stuffed crust</option>
-            <br />
-          </optgroup>
-        </select>
-        <div class="Custom-PreferredToppings col-md-4">
-          <div class="Toppings">
-            <h5 style="text-align: center;">Preferred Toppings</h5>
-            <fieldset id="custom-toppings">
-              <legend>Custom Preffered Toppings</legend>
-
-              <input type="checkbox" name="Bacon" id="bacon" value="80" />
-              <label for="bacon">Bacon slices @Kes.80</label>
-              <input type="checkbox" name="Beef" id="beef" value="50" />
-              <label for="beef">Ground beef @Kes.50</label>
-              <input type="checkbox" name="Sausage" id="sausage" value="50" />
-              <label for="sausage">Sausage rings @Kes.50</label>
-              <input type="checkbox" name="Ham" id="ham" value="80" />
-              <label for="ham">Ham slices @Kes.80</label>
-              <input type="checkbox" name="Pepperoni" id="pepperoni" value="70" />
-              <label for="pepperoni">Pepperoni rings @Kes.70</label>
-              <input type="checkbox" name="Chicken" id="chicken" value="50" />
-              <label for="chicken">Chicken chunks @Kes.50</label>
-
-              <input type="checkbox" name="Shrimp" id="shrimp" value="100" />
-              <label for="shrimp">Shrimp @Kes.100</label>
-              <input type="checkbox" name="Anchovies" id="anchovies" value="80" />
-              <label for="anchovies">Anchovies @Kes.80</label>
-              <input type="checkbox" name="Oysters" id="oysters" value="200" />
-              <label for="oysters">Smoked Oysters @Kes.200</label>
-              <input type="checkbox" name="Sardines" id="sardines" value="100" />
-              <label for="sardines">Sardines @Kes.100</label>
-              <input type="checkbox" name="Tuna" id="tuna" value="80" />
-              <label for="tuna">Tuna @Kes.80</label>
-
-              <input type="checkbox" name="Mushrooms" id="mushrooms" value="70" />
-              <label for="mushrooms">Mushrooms @Kes.70</label>
-              <input type="checkbox" name="Tomatoes" id="tomatoes" value="30" />
-              <label for="tomatoes">Sun-dried Tomatoes @Kes.30</label>
-              <input type="checkbox" name="Olives" id="olives" value="100" />
-              <label for="olives">Black Olives @Kes.100</label>
-              <input type="checkbox" name="Basil" id="basil" value="50" />
-              <label for="basil">Basil @Kes.50</label>
-              <input type="checkbox" name="Egg-plant" id="egg-plant" value="50" />
-              <label for="egg-plant">Grilled Egg-plant @Kes.50</label>
-              <input type="checkbox" name="Green-pepper" id="green-pepper" value="30" />
-              <label for="green-pepper">Roasted Green Pepper @Kes.30</label>
-            </fieldset>
+      <div class = " card orderInput">
+      <div class="row justify-content-around">
+        <form id="pizzaCraft">
+          <div class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaType">Type of pizza</label>
+            <select id="pizzaType" class="form-control col-sm-9">
+              <optgroup label="Meat">
+                <option value="Chicago-Pizza">Chicago Pizza</option>
+                <option value="NYC-Pizza">NYC Pizza </option>
+                <option value="Neapolitan-Pizza">Neapolitan Pizza </option>
+                <option value="Pepperoni-Pizza">Pepperoni Pizza </option>
+              </optgroup>
+              <optgroup label="Veggie">
+                <option value="Hawaiian-Pizza">Hawaiian Pizza </option>
+                <option value="Greek-Pizza">Greek Mama Pizza </option>
+                <option value="Mediterranean-Pizza">Mediterranean Pizza</option>
+                <option value="Tasty-tomato-Pizza">Tasty Tomato Pizza</option>
+              </optgroup>
+            </select>
           </div>
-        </div>
-        Pizza size<select name="Pizza-Size" id="PizzaSize">
-          <option value="kidSize">Kids' size @ 500/=</option>
-          <option value="medium">Medium @ 700/= </option>
-          <option value="large">Large @ 1000/= </option>
-          <option value="familySize">Family size @ 1200/= </option> </select
-        ><br />
-        Any extra toppings?
-        <select name="Extras" id="ExtraToppings">
-          <option value=""></option>
-          <option value="Cheese">Cheese @ 100/= </option>
-          <option value="Tomatoes">Sun-dried Tomatoes @ 50/=</option>
-          <option value="Olives">Black Olives @ 200/= </option>
-          <option value="Basil">Basil @ 100/= </option>
-          <option value="Onions">Caramelized Onions @ 50/= </option>
-          <option value="Pepper">Hot Chilli Pepper @ 50/= </option>
-          <option value="Bacon">Bacon @ 100/= </option>
-          <option value="Pineapple">Roasted Pineapple chunks @ 80/= </option> </select
-        ><br />
-        <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
-        Number of Pizzas
-        <div class="PizzaQuantity">
-          <input id="quantity" type="number" />
-        </div>
-        <div class="pizza-order form-group">
-          <button type="submit" class="btn btn-outline-danger">
-            Place Order!
-          </button>
-        </div>
-        <div class="Delivery form-group">
-          <button type="submit" class="btn btn-outline-warning">
-            Delivery?
-          </button>
-        </div>
-      </form>
-    </div>
-    <div class="customerContactDetails">
-      <div class="customerdata row">
-        <div class="col-sm-3"></div>
-        <form action="" class="form-group col-sm-6 data">
-          <input type="text" class="form-control cdata" placeholder="Enter your Name:" /><br /><br />
-          <input type="text" class="form-control cdata" placeholder="Enter your phone number: " /><br /><br />
-          <input type="text" class="form-control cdata" placeholder="Enter the location: " /><br /><br />
-          <button class="btn bg-info text-center d-block mx-auto go">Make Delivery</button>
+          <div class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaCrust">Type of Crust</label>
+            <select id="pizzaCrust" class="form-control col-sm-9">
+              <option value="Thin">Thin crust</option>
+              <option value="Thick">Thick crust</option>
+              <option value="Deep">Deep crust</option>
+              <option value="Stuffed">Stuffed crust</option>
+            </select>
+          </div>
+          <fieldset id="pizzaToppings" class="form-group" form="pizzaCraft">
+            <div class="row align-items-center">
+              <legend class="col-form-label col-sm-3">Toppings</legend>
+              <div class="col-sm-4">
+                <div class="form-check">
+                  <input class="form-check-input" id="anchovies" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Anchovies @Kes.80</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="oysters" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Smoked Oysters @Kes.200</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="sardines" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Sardines @Kes.100</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="tuna" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Tuna @Kes.80</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="mushrooms" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Mushrooms @Kes.70</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="tomatoes" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Sun-dried Tomatoes @Kes.30</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="olives" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Black Olives @Kes.100</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" id="bacon" type="checkbox" value="30" />
+                    <label class="form-check-label" for="chicken">Bacon slices @Kes.80</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" id="beef" type="checkbox" value="50" />
+                    <label class="form-check-label" for="bacon">Ground beef @Kes.50</label>
+                  </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-check">
+                  <input class="form-check-input" id="sausage" type="checkbox" value="45" />
+                  <label class="form-check-label" for="pepperoni">Sausage rings @Kes.50</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="ham" type="checkbox" value="70" />
+                  <label class="form-check-label" for="ham">Ham slices @Kes.80</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="pepperoni" type="checkbox" value="20" />
+                  <label class="form-check-label" for="mushroom">Pepperoni rings @Kes.70</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="chicken" type="checkbox" value="60" />
+                  <label class="form-check-label" for="pineapple">Chicken chunks @Kes.50</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="shrimp" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Shrimp @Kes.100</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="basil" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Basil @Kes.50</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="egg-plant" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Grilled Egg-plant @Kes.50</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="green-pepper" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Roasted Green Pepper @Kes.30</label>
+                </div>
+              </div>
+            </div>
+          <div id="pizzaCount" class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaCrust">Number of Pizzas</label>
+            <input class="form-control col-sm-9" type="number" min="1" />
+          </div>
+          <div class="form-group mr-n3">
+            <button class="btn btn-outline-success form-control" type="submit">Place Your Order</button>
+          </div>
         </form>
       </div>
     </div>
-    <div class="orderSummary" id="sum-order">
-      <h5 class="text-center" id="summary">Order Checkout</h5>
-      <h6 class="text-center summary">Your order is as follows:</h6>
-      <ol id="list" class="text-center sum"></ol>
     </div>
-    <div class="Footer" id="socialMediaIcons">
-      <br /><br />
-      <!--Twitter-->
-      <img src="./images/social_icons/twitter.png" alt="Twitter icon" /><a><i class="fab fa-lg fa-twitter"></i></a>
-      <!--Dribbble-->
-      <img src="./images/social_icons/dribble.png" alt="Dribble icon" /><a><i class="fab fa-lg fa-dribbble"></i></a>
-      <!--Facebook-->
-      <img src="./images/social_icons/facebook.png" alt="Facebook icon" />><a
-        ><i class="fab fa-lg fa-facebook-f"></i
-      ></a>
-      <!--Google -->
-      <img src="images/social_icons/g_plus.png" alt="Google_plus icon" /><a
-        ><i class="fab fa-lg fa-google-plus-g"></i
-      ></a>
-      <!--Skype-->
-      <img src="images/social_icons/skype.png" alt="Skype icon" /><a><i class="fab fa-lg fa-skype"></i></a>
-      <!--Stumble Upom-->
-      <img src="images/social_icons/stumble_upon.png" alt="Stumble-upon icon" /><a
-        ><i class="fab fa-lg fa-stumble-upon"></i
-      ></a>
-      <!--Behance-->
-      <img src="images/social_icons/behance.png" alt="Behance icon" /><a><i class="fab fa-lg fa-behance"></i></a>
-      <!--Pinterest-->
-      <img src="images/social_icons/pinterest.png" alt="Pinterest icon" /><a><i class="fab fa-lg fa-pinterest"></i></a>
-      <!--Flickr-->
-      <img src="images/social_icons/flickr.png" alt="Flickr icon" /><a><i class="fab fa-lg fa-flickr"></i></a>
-    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js"></script>
   </body>

@@ -1,3 +1,53 @@
+// Capture form data
+$(document).ready(function () {
+  $("#pizzaCraft").submit(function(event){
+    // Added variable count for the pizzaCount
+    var pizzaType, crust, toppings, count;
+    // good one...haha
+    // but wait...
+    pizzaType = $("#pizzaType :selected")
+    crust = $("#pizzaCrust :selected")
+    // ...And this
+    //It was not making sense having pizzatype as pizza size. So I changed that. Next is pizza Crust. That's okay.
+    //Extra toppings will be renamed to toppings then we remove it. So continue with toppings. Yes, PizzaToppings for id is correct.
+    //Can we hide the fieldset, too many options. Since it's optional we can show it only when someone clicks on the form for toppings.Yes?
+
+    // Yeah for sure, that's okay...
+
+    // So I've removed the .val() method tomake the selections made a little more reusable
+    pizzaToppings = $("#pizzaToppings :checked")
+
+    event.preventDefault()
+  })
+})
+
+// Create Pizza Constructor
+// Actually it's a pizza
+function PizzaOrder(type, crust, toppings, count){
+  this.type = type;
+  this.crust = crust;
+  this.toppings = toppings;
+  this.count = count;
+}
+
+// Add object method using prototype
+PizzaOrder.prototype.orderPrice = function() {
+  let sizePrice, crustPrice, toppingsPrice;
+  sizePrice = this.size.val();
+  crustPrice = this.crust.val();
+
+  toppingsPrice = this.toppings.map(function(topping){return topping.val()});
+  toppingsPrice = toppingsPrice.reduce(function(acc, cur){return acc + cur});
+
+  let orderPrice = (sizePrice + crustPrice + toppingsPrice) * this.count;
+
+  return orderPrice;
+};
+
+
+
+
+
 //User Interface
 $(document).ready(function(){
   $("#orderForm").submit(function(event) {
