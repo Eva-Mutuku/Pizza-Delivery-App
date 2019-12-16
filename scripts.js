@@ -288,4 +288,12 @@ $('[data-quantity="minus"]').click(function(e) {
      $(".custom-option").show();
    }
  });
+ $("#get-pizza-order").submit(function(event) {
+  // a constructor to define data needed in ordering pizzas
+  function UserOrder(size, crust, toppings, quantity) {
+    this.size = size;
+    this.crust = crust;
+    this.toppings = toppings;
+    this.quantity = quantity;
+  }
 });
