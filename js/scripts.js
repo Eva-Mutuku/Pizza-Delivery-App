@@ -195,7 +195,7 @@ PizzaOrder.prototype.orderPrice = function() {
 };
 
 function orderSummary(order) {
-  alert([order.type.val(), order.size.val(), order.crust.val(), order.toppings.html(), order.count]);
+  alert([order.type.val(), order.size.val(), order.crust.val(), order.toppings.next("label").text(), order.count]);
 }
 
 // //User Interface
