@@ -1,264 +1,250 @@
-$(function () {
-  $('.summary').hide();
-  $('.cdata-overlay').hide();
-  //Get inputs
-  $("#checkout").click(function () {
-    let TypeOfPizza = $("#Pizza-selection:selected").val();
-    let size = $("#Pizza-size:selected").val();
-    let crust = $("#Crust:selected").val();
-    let toppings = $("#Toppings:selected").val();
-    let extraToppings = $("#Extra-toppings:selected").val();
-    let number = $("#quantity").val();
-    console.log(size);
+// Capture form data
+$(document).ready(function() {
+  $("#pizzaCraft").submit(function(event) {
+    // Added variable count for the pizzaCount
+    var pizzaType, pizzaSize, pizzaCrust, pizzaToppings,pizzaCount;
+    pizzaType = $("#pizzaType :selected");
+    pizzaSize = $("#pizzaSize :selected");
+    pizzaCrust = $("#pizzaCrust :selected");
+    pizzaToppings = $("#pizzaToppings :checked");
 
-    //Function order
-    function order(TypeOfPizza, size, crust, PizzaQuantity, ExtraToppings, TotalPrice){
-        this.TypeOfpizza = TypeOfPizza;
-        this.size = size;
-        this.crust = crust;
-        this.ExtraToppings = ExtraToppings;
-        this.PizzaQuantity = PizzaQuantity;
-        this.TotalPrice = TotalPrice;
-      };
+    // Can't find an instance where I'll be needing to reuse the count object so I just called .val() on it
+    pizzaCount = parseInt($("#pizzaCount input").val());
 
-      //Execute order function
-      let newOrder = order(TypeOfPizza, size, crust, PizzaQuantity, ExtraToppings, TotalPrice);
-      console.log(newOrder); 
+    // new pizza order
+    var newOrder = new PizzaOrder(
+      pizzaType,
+      pizzaSize,
+      pizzaCrust,
+      pizzaToppings,
+      pizzaCount
+    );
+    orderSummary(newOrder);
 
-    //check price
-    let price, totalPrice;
-    switch (TypeOfPizza) {
-      case TypeOfPizza = ("Meat" && ("#Chicago" ||"#NYC"|| "Neapolitan" || "Pepperoni")):
-        switch (size) {
-          case size = "kidsize":
-            price = 800;
-            if (crust === "thin-crusted") {
-              totalPrice = (price * number);
-            } else if (crust === "thick-crusted") {
-              totalPrice = (price * number) + 100;
-            } else if (crust === "deep-crust") {
-              totalPrice = (price * number) + 150;
-            } else {
-              totalPrice = (price * number) + 200;
-            }
-            break;
-          case size = "medium":
-            price = 1000;
-            if (crust === "thin-crusted") {
-              totalPrice = (price * number);
-            } else if (crust === "thick-crusted") {
-              totalPrice = (price * number) + 100;
-            } else if (crust === "deep-crust") {
-              totalPrice = (price * number) + 150;
-            } else {
-              totalPrice = (price * number) + 200;
-            }
-            break;
-          case size = "large":
-            price = 1200;
-            if (crust === "thin-crusted") {
-              totalPrice = (price * number);
-            } else if (crust === "thick-crusted") {
-              totalPrice = (price * number) + 100;
-            } else if (crust === "deep-crust") {
-              totalPrice = (price * number) + 150;
-            } else {
-              totalPrice = (price * number) + 200;
-            }
-            break;
-            case size = "Family-size":
-              price = 1400;
-              if (crust === "thin-crusted") {
-                totalPrice = (price * number);
-              } else if (crust === "thick-crusted") {
-                totalPrice = (price * number) + 100;
-              } else if (crust === "deep-crust") {
-                totalPrice = (price * number) + 150;
-              } else {
-                totalPrice = (price * number) + 200;
-              }
-              break; 
-        }
-        break;
-        case TypeOfPizza = ("Veggie" && ("#Hawaiian" ||"#Greek-Mama"|| "Mediterranean" || "Tasty-tomato")):
-          switch (size) {
-            case size = "kidsize":
-              price = 500;
-              if (crust === "thin-crusted") {
-                totalPrice = (price * number);
-              } else if (crust === "thick-crusted") {
-                totalPrice = (price * number) + 100;
-              } else if (crust === "deep-crust") {
-                totalPrice = (price * number) + 150;
-              } else {
-                totalPrice = (price * number) + 200;
-              }
-              break;
-            case size = "medium":
-              price = 700;
-              if (crust === "thin-crusted") {
-                totalPrice = (price * number);
-              } else if (crust === "thick-crusted") {
-                totalPrice = (price * number) + 100;
-              } else if (crust === "deep-crust") {
-                totalPrice = (price * number) + 150;
-              } else {
-                totalPrice = (price * number) + 200;
-              }
-              break;
-            case size = "large":
-              price = 900;
-              if (crust === "thin-crusted") {
-                totalPrice = (price * number);
-              } else if (crust === "thick-crusted") {
-                totalPrice = (price * number) + 100;
-              } else if (crust === "deep-crust") {
-                totalPrice = (price * number) + 150;
-              } else {
-                totalPrice = (price * number) + 200;
-              }
-              break;
-              case size = "Family-size":
-                price = 1100;
-                if (crust === "thin-crusted") {
-                  totalPrice = (price * number);
-                } else if (crust === "thick-crusted") {
-                  totalPrice = (price * number) + 100;
-                } else if (crust === "deep-crust") {
-                  totalPrice = (price * number) + 150;
-                } else {
-                  totalPrice = (price * number) + 200;
-                }
-                break; 
-          } break;
-          //calculate total prize for toppings under custom order.
-          var toppings = $(".Toppings input:checked");
-          var Toppingprizes = toppings.map(topping => parseInt(topping.val()));
-          var ToppingsTotalPrize = ToppingsPrizes.reduce(acc, cur => acc+cur);
-
-          //calculate total prize for custom order
-          case TypeOfPizza = "Custom":
-            switch (size) {
-              case size = "kidsize":
-                price = 800;
-                if (crust === "thin-crusted") {
-                  totalPrice = (price * number)+ToppingsTotalPrize;
-                } else if (crust === "thick-crusted") {
-                  totalPrice = (price * number) + 100 + ToppingsTotalPrize;
-                } else if (crust === "deep-crust") {
-                  totalPrice = (price * number) + 150 + ToppingsTotalPrize;
-                } else {
-                  totalPrice = (price * number) + 200 + ToppingsTotalPrize;
-                }
-                break;
-              case size = "medium":
-                price = 1000;
-                if (crust === "thin-crusted") {
-                  totalPrice = (price * number) + ToppingsTotalPrize;
-                } else if (crust === "thick-crusted") {
-                  totalPrice = (price * number) + 100 + ToppingsTotalPrize;
-                } else if (crust === "deep-crust") {
-                  totalPrice = (price * number) + 150 + ToppingsTotalPrize;
-                } else {
-                  totalPrice = (price * number) + 200 + ToppingsTotalPrize;
-                }
-                break;
-              case size = "large":
-                price = 1200;
-                if (crust === "thin-crusted") {
-                  totalPrice = (price * number) + ToppingsTotalPrize;
-                } else if (crust === "thick-crusted") {
-                  totalPrice = (price * number) + 100 + ToppingsTotalPrize;
-                } else if (crust === "deep-crust") {
-                  totalPrice = (price * number) + 150 + ToppingsTotalPrize;
-                } else {
-                  totalPrice = (price * number) + 200 + ToppingsTotalPrize;
-                }
-                break;
-                case size = "Family-size":
-                  price = 1400;
-                  if (crust === "thin-crusted") {
-                    totalPrice = (price * number) + ToppingsTotalPrize;
-                  } else if (crust === "thick-crusted") {
-                    totalPrice = (price * number) + 100 + ToppingsTotalPrize;
-                  } else if (crust === "deep-crust") {
-                    totalPrice = (price * number) + 150 + ToppingsTotalPrize;
-                  } else {
-                    totalPrice = (price * number) + 200 + ToppingsTotalPrize;
-                  }
-                  break; 
-            }
-            break;
-    switch (ExtraToppings) {
-      case topping = "Cheese":
-        totalPrice = totalPrice + 100;
-        break;
-      case topping = "Tomatoes":
-        totalPrice = totalPrice + 50;
-        break;
-      case topping = "Olives":
-        totalPrice = totalPrice + 200;
-        break;
-      case topping = "Basil":
-        totalPrice = totalPrice + 100;
-        break;
-      case topping = "Onions":
-        totalPrice = totalPrice + 50;
-        break;
-      case topping = "Pepper":
-        totalPrice = totalPrice + 50;
-        break;
-      case topping = "Pineapple":
-        totalPrice = totalPrice + 50;
-        break;
-      case topping = "bacon":
-        totalPrice = totalPrice + 100;
-        break;
-    }
-     $('#list').text(" ");
-     $("#list").append("<br>" + "TypeOfPizza :   " + newOrder.TypeOfPizza + 
-     "<br>" + "Size :   " + newOrder.size + "<br>" + 
-     "Crust :     " + newOrder.crust + "<br>" + 
-     " Number of pizzas :    " + newOrder.PizzaQuantity + "<br>" + 
-     " Extra Toppings :    " + newOrder.ExtraToppings + "<br>" + 
-     "Total Price :  " + newOrder.total + "<br><br>").css('font-family', 'system-ui').css('font-size', '24px');
-
-            //Write to the order
-    //  $('.summary').slideDown(2000);
-    //  $('.cdata-overlay').slideUp();
-    //  $('#list').slideDown();
-    //  $('.deliver').show(1000);
-    //  $('.delivernot').show(1000);
- 
-
-
-//User Interface
-//Select pizza, size and toppings options
- $("#PizzaSelection").click(function(event) {
-   event.preventDefault();
-   var option = $(":selected").val();
-   if(option === "Meat") {
-     $(".meat-options").show();
-     $(".veggie-options").hide();
-     $(".custom-option").hide();
-   }else if(option === "Veggie") {
-     $(".meat-options").hide();
-     $(".veggie-options").show();
-     $(".custom-option").hide();
-   }else {
-     $(".meat-options").hide();
-     $(".veggie-options").hide();
-     $(".custom-option").show();
-   }
+    event.preventDefault();
   });
+});
 
-   $(".pizza-order").submit(function(event) {
-    // a constructor to define data needed in ordering pizzas
-    function PizzaOrder(size, crust, toppings, quantity) {
-      this.size = size;
-      this.crust = crust;
-      this.toppings = toppings;
-      this.quantity = quantity;
-    }
+// Create Pizza Constructor
+// Actually it's a pizza
+function PizzaOrder(type, size, crust, toppings, count) {
+  this.type = type;
+  this.size = size;
+  this.crust = crust;
+  this.toppings = toppings;
+  this.count = count;
+}
+
+// Add object method using prototype
+PizzaOrder.prototype.orderPrice = function() {
+  var toppingsPrice;
+  // typePrice = parseInt(this.type.val());
+  // sizePrice = parseInt(this.size.val());
+  // crustPrice = parseInt(this.crust.val());
+  toppingsPrice = this.toppings.map(function() {
+    return parseInt($(this).val());
   });
+  let toppingsTotalPrice = 0;
+  for (let i = 0; i < toppingsPrice.length; i++) {
+    toppingsTotalPrice += toppingsPrice[i];
+  }
 
+  switch (this.type) {
+    case (this.type =
+      "Chicago-Pizza" || "NYC-Pizza" || "Neapolitan-Pizza" || "Pepperoni-Pizza"):
+      switch (this.size) {
+        case (this.size = "kidSize"):
+          price = 800;
+          if (this.crust === "Thin") {
+            TotalPrice = price * this.count + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Thick") {
+            TotalPrice = price * this.count + 100 + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Deep") {
+            TotalPrice = price * this.count + 150 + toppingsTotalPrice;
+            return TotalPrice;
+          } else {
+            TotalPrice = price * this.count + 200 + toppingsTotalPrice;
+            return TotalPrice;
+          }
+          break;
+        case (this.size = "medium"):
+          price = 100 + toppingsTotalPrice;
+          if (this.crust === "Thin") {
+            TotalPrice = price * this.count + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Thick") {
+            TotalPrice = price * this.count + 100 + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Deep") {
+            TotalPrice = price * this.count + 150 + toppingsTotalPrice;
+            return TotalPrice;
+          } else {
+            TotalPrice = price * this.count + 200 + toppingsTotalPrice;
+            return TotalPrice;
+          }
+          break;
+        case (this.size = "large"):
+          price = 1 + toppingsTotalPrice;
+          if (this.crust === "Thin") {
+            TotalPrice = price * this.count + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Thick") {
+            TotalPrice = price * this.count + 100 + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Deep") {
+            TotalPrice = price * this.count + 150 + toppingsTotalPrice;
+            return TotalPrice;
+          } else {
+            TotalPrice = price * this.count + 200 + toppingsTotalPrice;
+            return TotalPrice;
+          }
+          break;
+        case (this.size = "familySize"):
+          price = 1400;
+          if (this.crust === "Thin") {
+            TotalPrice = price * this.count + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Thick") {
+            TotalPrice = price * this.count + 100 + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Deep") {
+            TotalPrice = price * this.count + 150 + toppingsTotalPrice;
+            return TotalPrice;
+          } else {
+            TotalPrice = price * this.count + 200 + toppingsTotalPrice;
+            return TotalPrice;
+          }
+          break;
+      }
+      break;
+    case (this.type =
+      "Hawaiian-Pizza" ||
+      "Greek-Pizza" ||
+      "Mediterranean-Pizza" ||
+      "Tasty-tomato-Pizza"):
+      switch (this.size) {
+        case (this.size = "kidSize"):
+          price = 500;
+          if (this.crust === "Thin") {
+            TotalPrice = price * this.count;
+            return TotalPrice;
+          } else if (this.crust === "Thick") {
+            TotalPrice = price * this.count + 100 + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Deep") {
+            TotalPrice = price * this.count + 150 + toppingsTotalPrice;
+            return TotalPrice;
+          } else {
+            TotalPrice = price * this.count + 200 + toppingsTotalPrice;
+            return TotalPrice;
+          }
+          break;
+        case (this.size = "medium"):
+          price = 700;
+          if (this.crust === "Thin") {
+            TotalPrice = price * this.count + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Thick") {
+            TotalPrice = price * this.count + 100 + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Deep") {
+            TotalPrice = price * this.count + 150 + toppingsTotalPrice;
+            return TotalPrice;
+          } else {
+            TotalPrice = price * this.count + 200 + toppingsTotalPrice;
+            return TotalPrice;
+          }
+          break;
+        case (this.size = "large"):
+          price = 900;
+          if (this.crust === "Thin") {
+            TotalPrice = price * this.count + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Thick") {
+            TotalPrice = price * this.count + 100 + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Deep") {
+            TotalPrice = price * this.count + 150 + toppingsTotalPrice;
+            return TotalPrice;
+          } else {
+            TotalPrice = price * this.count + 200 + toppingsTotalPrice;
+            return TotalPrice;
+          }
+          break;
+        case (this.size = "familySize"):
+          price = 1100 + toppingsTotalPrice;
+          if (this.crust === "Thin") {
+            TotalPrice = price * this.count + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Thick") {
+            TotalPrice = price * this.count + 100 + toppingsTotalPrice;
+            return TotalPrice;
+          } else if (this.crust === "Deep") {
+            TotalPrice = price * this.count + 150 + toppingsTotalPrice;
+            return TotalPrice;
+          } else {
+            TotalPrice = price * this.count + 200 + toppingsTotalPrice;
+            return TotalPrice;
+          }
+          break;
+      }
+      break;
+  }
+};
+
+function orderSummary(order) {
+  alert([order.type.val(), order.size.val(), order.crust.val(), order.toppings.html(), order.count]);
+}
+
+// //User Interface
+// $(document).ready(function() {
+//   $("#orderForm").submit(function(event) {
+//     event.preventDefault();
+//   });
+
+//   //Reveal order summary upon clicking make order.
+//   $(".pizza-order").Click(function() {
+//     $(".orderSummary").show();
+//   });
+
+//   $(".Delivery").Click(function() {
+//     $(".customerContactDetails").show();
+//   });
+
+//   //Create summary
+//   $("#list").text(" ");
+//   $("#list")
+//     .append(
+//       "<br>" +
+//         "this.type :   " +
+//         newOrder.this.type +
+//         "<br>" +
+//         "Size :   " +
+//         newOrder.size +
+//         "<br>" +
+//         "Crust :     " +
+//         newOrder.crust +
+//         "<br>" +
+//         " count of pizzas :    " +
+//         newOrder.count +
+//         "<br>" +
+//         " Extra Toppings :    " +
+//         newOrder.toppings +
+//         "<br>" +
+//         "Total Price :  " +
+//         newOrder.TotalPrice +
+//         return TotalPrice;
+//         "<br><br>"
+//     )
+//     .css("font-family", "system-ui")
+//     .css("font-size", "24px");
+
+//   //Write to the order
+//   $(".summary").slideDown(+toppingsPrice);
+//   $(".cdata-overlay").slideUp();
+//   $("#list").slideDown();
+//   $(".deliver").show(100 + toppingsPrice);
+//   $(".delivernot").show(100 + toppingsPrice);
+// });
