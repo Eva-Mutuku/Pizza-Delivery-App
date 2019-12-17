@@ -2,17 +2,24 @@
 $(document).ready(function() {
   $("#pizzaCraft").submit(function(event) {
     // Added variable count for the pizzaCount
-    var pizzaType, crust, toppings, count;
+    var pizzaType, pizzaSize, pizzaCrust, pizzaToppings,pizzaCount;
     pizzaType = $("#pizzaType :selected");
     pizzaSize = $("#pizzaSize :selected");
     pizzaCrust = $("#pizzaCrust :selected");
     pizzaToppings = $("#pizzaToppings :checked");
 
     // Can't find an instance where I'll be needing to reuse the count object so I just called .val() on it
-    pizzaCount = $("#pizzaCount input").val();
+    pizzaCount = parseInt($("#pizzaCount input").val());
 
     // new pizza order
-    var newOrder = PizzaOrder(pizzaType, pizzaSize, pizzaCrust, pizzaToppings, pizzaCount);
+    var newOrder = new PizzaOrder(
+      pizzaType,
+      pizzaSize,
+      pizzaCrust,
+      pizzaToppings,
+      pizzaCount
+    );
+    orderSummary(newOrder);
 
     event.preventDefault();
   });
@@ -31,18 +38,20 @@ function PizzaOrder(type, size, crust, toppings, count) {
 // Add object method using prototype
 PizzaOrder.prototype.orderPrice = function() {
   var typePrice, sizePrice, crustPrice, toppingsPrice;
-  typePrice = this.type.val();
-  sizePrice = this.size.val();
-  crustPrice = this.crust.val();
+  // typePrice = parseInt(this.type.val());
+  sizePrice = parseInt(this.size.val());
+  crustPrice = parseInt(this.crust.val());
 
-  toppingsPrice = this.toppings.map(function(topping) {
-    return topping.val();
+  toppingsPrice = this.toppings.map(function() {
+    return parseInt($(this).val());
   });
-  toppingsPrice = toppingsPrice.reduce(function(acc, cur) {
-    return acc + cur;
-  });
+  let toppingsTotalPrice = 0;
+  for (let i = 0; i < toppingsPrice.length; i++) {
+    toppingsTotalPrice += toppingsPrice[i];
+  }
 
-  var orderPrice = (typePrice + sizePrice + crustPrice + toppingsPrice) * this.count;
+  var orderPrice =
+    (typePrice + sizePrice + crustPrice + toppingsTotalPrice) * this.count;
 
   return orderPrice;
 };
@@ -103,15 +112,16 @@ $(document).ready(function() {
 
 let price, TotalPrice;
 switch (pizzaType) {
-  case (pizzaType = "Chicago-Pizza" || "NYC-Pizza" || "Neapolitan-Pizza" || "Pepperoni-Pizza"):
+  case (pizzaType =
+    "Chicago-Pizza" || "NYC-Pizza" || "Neapolitan-Pizza" || "Pepperoni-Pizza"):
     switch (pizzaSize) {
       case (pizzaSize = "kidSize"):
         price = 800;
-        if (crust === "thin-crusted") {
+        if (crust === "Thin") {
           TotalPrice = price * count + toppingsPrice;
-        } else if (crust === "thick-crusted") {
+        } else if (crust === "Thick") {
           TotalPrice = price * count + 100 + toppingsPrice;
-        } else if (crust === "deep-crust") {
+        } else if (crust === "Deep") {
           TotalPrice = price * count + 150 + toppingsPrice;
         } else {
           TotalPrice = price * count + 200 + toppingsPrice;
@@ -119,11 +129,11 @@ switch (pizzaType) {
         break;
       case (pizzaSize = "medium"):
         price = 100 + toppingsPrice0;
-        if (crust === "thin-crusted") {
+        if (crust === "Thin") {
           TotalPrice = price * count + toppingsPrice;
-        } else if (crust === "thick-crusted") {
+        } else if (crust === "Thick") {
           TotalPrice = price * count + 100 + toppingsPrice;
-        } else if (crust === "deep-crust") {
+        } else if (crust === "Deep") {
           TotalPrice = price * count + 150 + toppingsPrice;
         } else {
           TotalPrice = price * count + 200 + toppingsPrice;
@@ -131,11 +141,11 @@ switch (pizzaType) {
         break;
       case (pizzaSize = "large"):
         price = 1 + toppingsPrice;
-        if (crust === "thin-crusted") {
+        if (crust === "Thin") {
           TotalPrice = price * count + toppingsPrice;
-        } else if (crust === "thick-crusted") {
+        } else if (crust === "Thick") {
           TotalPrice = price * count + 100 + toppingsPrice;
-        } else if (crust === "deep-crust") {
+        } else if (crust === "Deep") {
           TotalPrice = price * count + 150 + toppingsPrice;
         } else {
           TotalPrice = price * count + 200 + toppingsPrice;
@@ -143,11 +153,11 @@ switch (pizzaType) {
         break;
       case (pizzaSize = "familySize"):
         price = 1400;
-        if (crust === "thin-crusted") {
+        if (crust === "Thin") {
           TotalPrice = price * count + toppingsPrice;
-        } else if (crust === "thick-crusted") {
+        } else if (crust === "Thick") {
           TotalPrice = price * count + 100 + toppingsPrice;
-        } else if (crust === "deep-crust") {
+        } else if (crust === "Deep") {
           TotalPrice = price * count + 150 + toppingsPrice;
         } else {
           TotalPrice = price * count + 200 + toppingsPrice;
@@ -155,15 +165,19 @@ switch (pizzaType) {
         break;
     }
     break;
-  case (pizzaType = "Hawaiian-Pizza" || "Greek-Pizza" || "Mediterranean-Pizza" || "Tasty-tomato-Pizza"):
+  case (pizzaType =
+    "Hawaiian-Pizza" ||
+    "Greek-Pizza" ||
+    "Mediterranean-Pizza" ||
+    "Tasty-tomato-Pizza"):
     switch (pizzaSize) {
       case (pizzaSize = "kidSize"):
         price = 500;
-        if (crust === "thin-crusted") {
+        if (crust === "Thin") {
           TotalPrice = price * count;
-        } else if (crust === "thick-crusted") {
+        } else if (crust === "Thick") {
           TotalPrice = price * count + 100 + toppingsPrice;
-        } else if (crust === "deep-crust") {
+        } else if (crust === "Deep") {
           TotalPrice = price * count + 150 + toppingsPrice;
         } else {
           TotalPrice = price * count + 200 + toppingsPrice;
@@ -171,11 +185,11 @@ switch (pizzaType) {
         break;
       case (pizzaSize = "medium"):
         price = 700;
-        if (crust === "thin-crusted") {
+        if (crust === "Thin") {
           TotalPrice = price * count + toppingsPrice;
-        } else if (crust === "thick-crusted") {
+        } else if (crust === "Thick") {
           TotalPrice = price * count + 100 + toppingsPrice;
-        } else if (crust === "deep-crust") {
+        } else if (crust === "Deep") {
           TotalPrice = price * count + 150 + toppingsPrice;
         } else {
           TotalPrice = price * count + 200 + toppingsPrice;
@@ -183,11 +197,11 @@ switch (pizzaType) {
         break;
       case (pizzaSize = "large"):
         price = 900;
-        if (crust === "thin-crusted") {
+        if (crust === "Thin") {
           TotalPrice = price * count + toppingsPrice;
-        } else if (crust === "thick-crusted") {
+        } else if (crust === "Thick") {
           TotalPrice = price * count + 100 + toppingsPrice;
-        } else if (crust === "deep-crust") {
+        } else if (crust === "Deep") {
           TotalPrice = price * count + 150 + toppingsPrice;
         } else {
           TotalPrice = price * count + 200 + toppingsPrice;
@@ -195,11 +209,11 @@ switch (pizzaType) {
         break;
       case (pizzaSize = "familySize"):
         price = 1100 + toppingsPrice;
-        if (crust === "thin-crusted") {
+        if (crust === "Thin") {
           TotalPrice = price * count + toppingsPrice;
-        } else if (crust === "thick-crusted") {
+        } else if (crust === "Thick") {
           TotalPrice = price * count + 100 + toppingsPrice;
-        } else if (crust === "deep-crust") {
+        } else if (crust === "Deep") {
           TotalPrice = price * count + 150 + toppingsPrice;
         } else {
           TotalPrice = price * count + 200 + toppingsPrice;
