@@ -31,9 +31,9 @@
                     >
                     <select id="pizzaSize" class="form-control col-sm-9">
                       <option value="500">Kids' Size @500/=</option>
-                      <option value="800">Medium @500/=</option>
-                      <option value="1000">Large @500/=</option>
-                      <option value="1200">FamilySize @500/=</option>
+                      <option value="800">Medium @700/=</option>
+                      <option value="1000">Large @900/=</option>
+                      <option value="1200">FamilySize @1100/=</option>
                     </select>
                   </div>
                        <!--Crust section-->
@@ -46,6 +46,7 @@
                             <option value="400">Stuffed crust @400/=</option>
                         </select>
                     </div>
+
                     <!--Topping section-->
                     <fieldset id="pizzaToppings" class="form-group" form="pizzaCraft">
                       <legend class="col-form-label col-sm-3 text-center">Toppings</legend>
@@ -133,6 +134,7 @@
                           <button class="btn btn-outline-success form-control" type="submit">Place Your Order</button>
                         </div>
                       </form>
+
                       <!-- Pizza cart -->
                       <div id="pizzaCart" class="col-md-6">
                         <h1>Pizza Cart</h1>
@@ -145,10 +147,10 @@
                               <th>Price</th>
                             </tr>
                           </thead>
-                          <tbody></tbody>
+                          <tablebody></tablebody>
                         </table>
                         <hr />
-                        <p>The total charge is <span id="tt-charge">0</span>/=</p>
+                        <p>The total charge is <span id="total-charge">0</span>/=</p>
 
                         <!-- Delivery -->
                         <form id="delivery">
