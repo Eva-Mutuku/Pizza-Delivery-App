@@ -1,8 +1,21 @@
 // Capture form data
-<script type="text/javascript">
     $(document).ready(function () {
-        $("#pizzaCraft").submit(function (event) {
-            event.preventDefault();
+        $("form#pizzacreation").submit(function (event) {
+          let size, crust, toppings, count;
+          size = $("#pizzaSize :selected");
+          crust = $("#pizzaCrust :selected");
+          toppings = $("#pizzaToppings :checked");
+          count = parseInt($("#pizzaToppings :checked").val());
+
+          let pizzaOrder = new PizzaOrder(size, crust, toppings, count);
+          addToCart(pizzaOrder);
+
+          event.preventDefault();
+
+        });
+
+        // Display checkout button after placing order
+        
             $(".orderSummary").show();
             // Added variable count for the pizzaCount
             var pizzaType, pizzaCrust, pizzaToppings, pizzaCount;
