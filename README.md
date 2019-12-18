@@ -1,6 +1,6 @@
 
 # PIZZA MAD HOUSE
-[Check it out](https://eva-mutuku.github.io/Delani-Studio/.)
+[Check it out](https://github.com/Eva-Mutuku/Pizza-Delivery-App.)
 ​
 ## Description.
 Pizza mad house is a webpage where users can order pizza online and have it delivered at their place of choice.
@@ -21,7 +21,7 @@ Pizza mad house is a webpage where users can order pizza online and have it deli
  > Open the ``index.html`` on your favorite browser.
 
  ## Behavior Driven Development
- 1. On the main page, there is a form where you fill in the order details beginning with type of pizza, size, type of crust, preferred toppings and number.
+ 1. On the main page, there is a form where you fill in the order details.
  2. After that, one presses the place order button and a summary of order section comes up with the summary of items in the cart. 
  3. Upon confirming, one can press on delivery button to input their contact and location details.
  4. Price changes with delivery.
