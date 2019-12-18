@@ -13,9 +13,30 @@
           event.preventDefault();
 
         });
-
-        // Display checkout button after placing order
         
+        // Display checkout button after placing order
+        $("#checkoutBtn").click(function() {
+          var delivery = $("#delivery :checked").val();
+          var location = $("#deliveryLocation").val()
+          var fullCharge = parseInt($("#tt-charge").html());
+
+          if(delivery === "deliver") {
+            alert ("Thank you for buying your Palacina Pizza. Your total charge is ${fullCharge + 500} Your delivery is on the way to ${location} ");
+          }else {
+            alert("Thank you for buying your Palacina Pizza. Your total charge is ${fullCharge} ");
+          }
+        });
+
+        // Display delivery location after clicking delivery
+        $("#pick-up").click(function() {
+          $("#deliveryLocation").hide();
+        });
+        $("#sdeliver").click(function() {
+          $("#deliveryLocation").show();
+        });
+
+        // 
+
             $(".orderSummary").show();
             // Added variable count for the pizzaCount
             var pizzaType, pizzaCrust, pizzaToppings, pizzaCount;
