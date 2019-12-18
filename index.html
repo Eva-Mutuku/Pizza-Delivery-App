@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Amaranth|Great+Vibes|Lobster&display=swap" rel="stylesheet">
     <title>Your Style Pizza</title>
 </head>
@@ -124,77 +124,58 @@
                               </div>
                           </div>
                       </div>
-                  </fieldset>
-                    <div class="form-group row PizzaSelection align-items-center">
-                        <!--The meat section-->
-                        <label class="col-sm-3 col-form-label" for="pizzaType">Type of Pizza- Meat Section</label>
-                        <select id="pTypeKidM" class="form-control col-sm-9 pizzaType">
-                            <option>Kid Size</option>
-                            <option class="kidsize" value="800">Chicago-Pizza(kidsize)</option>
-                            <option class="kidsize" value="800">NYC Pizza (kidsize)</option>
-                            <option class="kidsize" value="800">Neapolitan Pizza(kidsize) </option>
-                            <option class="kidsize" value="800">Pepperoni Pizza(kidsize) </option>
-                        </select>
-
-                        <select id="pTypeMediumM" class="form-control col-sm-9 pizzaType">
-                                <option>Medium</option> Size</option>
-                            <option class="medium" value="1000">Chicago-Pizza(medium)</option>
-                            <option class="medium" value="1000">NYC Pizza (medium)</option>
-                            <option class="medium" value="1000">Neapolitan Pizza(medium) </option>
-                            <option class="medium" value="1000">Pepperoni Pizza(medium) </option>
-                        </select>
-
-                        <select id="pTypeLargeM" class="form-control col-sm-9 pizzaType">
-                                <option>Large</option>
-                            <option class="large" value="1200">Chicago-Pizza(Large)</option>
-                            <option class="large" value="1200">NYC Pizza (Large)</option>
-                            <option class="large" value="1200">Neapolitan Pizza(Large) </option>
-                            <option class="large" value="1200">Pepperoni Pizza(Large) </option>
-                        </select>
-
-
-                        <select id="pTypeXlargeM" class="form-control col-sm-9 pizzaType">
-                                <option>XLarge Size</option>
-                            <option class="xlarge" value="1400">Chicago-Pizza(XLarge)</option>
-                            <option class="xlarge" value="1400">NYC Pizza (XLarge)</option>
-                            <option class="xlarge" value="1400">Neapolitan Pizza(XLarge) </option>
-                            <option class="xlarge" value="1400">Pepperoni Pizza(XLarge) </option>
-                        </select>
-                        <!--The Veggie section-->
-                        <label class="col-sm-3 col-form-label" for="pizzaType">Type of Pizza- Veggie Section</label>
-                        <select id="pTypeKidV" class="form-control col-sm-9 pizzaType">
-                                <option>Kid Size</option>
-                            <option class="kidsize" value="500">Hawaiian Pizza (kidsize)</option>
-                            <option class="kidsize" value="500">Greek Mama Pizza (kidsize)</option>
-                            <option class="kidsize" value="500">Mediterranean Pizza(kidsize)</option>
-                            <option class="kidsize" value="500">Tasty Tomato Pizza(kidsize)</option>
-                        </select>
-                        <select id="pTypeMediumV" class="form-control col-sm-9 pizzaType">
-                                <option>Medium Size</option>
-                            <option class="medium" value="1000">Hawaiian Pizza (Medium)</option>
-                            <option class="medium" value="1000">Greek Mama Pizza (Medium)</option>
-                            <option class="medium" value="1000">Mediterranean Pizza(Medium)</option>
-                            <option class="medium" value="1000">Tasty Tomato Pizza((Medium)</option>
-                        </select>
-                        <select id="pTypeLargeV" class="form-control col-sm-9 pizzaType">
-                                <option>Large Size</option>
-                            <option class="large" value="1200">Hawaiian Pizza (Large)</option>
-                            <option class="large" value="1200">Greek Mama Pizza (Large)</option>
-                            <option class="large" value="1200">Mediterranean Pizza(Large)</option>
-                            <option class="large" value="1200">Tasty Tomato Pizza(Large)</option>
-                        </select>
-                        <select id="pTypeXlargeV" class="form-control col-sm-9 pizzaType">
-                                <option>XLarge Size</option>
-                            <option class="xlarge" value="1400">Hawaiian Pizza (XLarge)</option>
-                            <option class="xlarge" value="1400">Greek Mama Pizza (XLarge)</option>
-                            <option class="xlarge" value="1400">Mediterranean Pizza(XLarge)</option>
-                            <option class="xlarge" value="1400">Tasty Tomato Pizza(XLarge)</option>
-                        </select>
-                    </div>
-                    
+                    </fieldset>                   
                     <div id="pizzaCount" class="form-group row align-items-center">
                         <label class="col-sm-3 col-form-label" for="pizzaCount">Number of Pizzas</label>
                         <input class="form-control col-sm-9" type="number" min="1">
-</body>
+                        <div class="form-group mr-n3">
+                          <button class="btn btn-outline-success form-control" type="submit">Place Your Order</button>
+                        </div>
+                      </form>
+                      <!-- Pizza cart -->
+                      <div id="pizzaCart" class="col-md-6">
+                        <h1>Pizza Cart</h1>
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>Size</th>
+                              <th>Crust</th>
+                              <th>Toppings</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                        <hr />
+                        <p>The total charge is <span id="tt-charge">0</span>/=</p>
 
+                        <!-- Delivery -->
+                        <form id="delivery">
+                          <p>Would you like a delivery at 500/= ?</p>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="delivery" type="radio" id="pick-up" value="pick" />
+                            <label class="form-check-label" for="pick-up">
+                              Pick-Up
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="delivery" type="radio" id="deliver" value="deliver" />
+                            <label class="form-check-label" for="deliver">
+                              Delivery
+                            </label>
+                          </div>
+                          <input class="form-control" id="deliveryLocation" type="text" placeholder="Delivery Location..." />
+                        </form>
+                        <button id="checkoutBtn" class="btn btn-outline-success form-control">Checkout</button>
+                      </div>
+                    </div>
+                  </div>
+                  <script
+                  src="https://code.jquery.com/jquery-3.4.1.min.js"
+                  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                  crossorigin="anonymous"
+                ></script>
+                <script src="js/jquery-3.4.1.js"></script>
+                <script src="js/scripts.js"></script>
+</body>
 </html>
