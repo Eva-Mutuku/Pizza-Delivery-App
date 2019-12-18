@@ -9,16 +9,12 @@
 
           let pizzaOrder = new PizzaOrder(size, crust, toppings, count);
           addToCart(pizzaOrder);
-
-          event.preventDefault();
-
-        });
         
         // Display checkout button after placing order
         $("#checkoutBtn").click(function() {
           var delivery = $("#delivery :checked").val();
           var location = $("#deliveryLocation").val()
-          var fullCharge = parseInt($("#tt-charge").html());
+          var fullCharge = parseInt($("#tota-charge").html());
 
           if(delivery === "deliver") {
             alert ("Thank you for buying your Palacina Pizza. Your total charge is ${fullCharge + 500} Your delivery is on the way to ${location} ");
@@ -34,6 +30,7 @@
         $("#sdeliver").click(function() {
           $("#deliveryLocation").show();
         });
+      });
 
         // Pizza Constructor
         function PizzaOrder(pizzaSize, pizzaCrust, pizzaToppings, pizzaCount) {
@@ -68,12 +65,20 @@
         })
         .get()
         .join();
-        $("#pizzaCart tablebody").append("<tr><td>${order.size.html()}</td><td>${order.crust.html()}</td><td>${toppings}</td><td>${order.getPrice()}</td>}");
+        $("#pizzaCart tablebody").append(`<tr>
+                                  <td>${order.size.html()}</td>
+                                  <td>${order.crust.html()}</td>
+                                  <td>${toppings}</td>
+                                  <td>${order.getPrice()}</td>
+                                </tr>`);
 
         var currentTotalCharge = parseInt($("#total-charge").html());
         $("#total-charge").html(currentTotalCharge + order.getPrice());
         $("#checkoutBtn").show();
         $("#delivery").show();
       }
-    })
+      event.preventDefault();
+
+    });
+  
   
