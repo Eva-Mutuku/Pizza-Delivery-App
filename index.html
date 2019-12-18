@@ -29,12 +29,22 @@
                       >Size of Pizza</label
                     >
                     <select id="pizzaSize" class="form-control col-sm-9">
-                      <option value="500">Kids' Size</option>
-                      <option value="800">Medium</option>
-                      <option value="1000">Large</option>
-                      <option value="1200">FamilySize</option>
+                      <option value="500">Kids' Size @500/=</option>
+                      <option value="800">Medium @500/=</option>
+                      <option value="1000">Large @500/=</option>
+                      <option value="1200">FamilySize @500/=</option>
                     </select>
                   </div>
+                       <!--Crust section-->
+                       <div class="form-group row align-items-center">
+                        <label class="col-sm-3 col-form-label" for="pizzaCrust">Type of Crust</label>
+                        <select id="pizzaCrust" class="form-control col-sm-9">
+                            <option value="100">Thin crust @100/=</option>
+                            <option value="200">Thick crust @200/=</option>
+                            <option value="300">Deep crust @300/=</option>
+                            <option value="400">Stuffed crust @400/=</option>
+                        </select>
+                    </div>
                     <div class="form-group row PizzaSelection align-items-center">
                         <!--The meat section-->
                         <label class="col-sm-3 col-form-label" for="pizzaType">Type of Pizza- Meat Section</label>
@@ -101,18 +111,6 @@
                             <option class="xlarge" value="1400">Tasty Tomato Pizza(XLarge)</option>
                         </select>
                     </div>
-
-                    <!--Crust section-->
-                    <div class="form-group row align-items-center">
-                        <label class="col-sm-3 col-form-label" for="pizzaCrust">Type of Crust</label>
-                        <select id="pizzaCrust" class="form-control col-sm-9">
-                            <option value="thin">Thin crust</option>
-                            <option value="thick">Thick crust</option>
-                            <option value="deep">Deep crust</option>
-                            <option value="stuffed">Stuffed crust</option>
-                        </select>
-                    </div>
-
                     <!--Topping section-->
                     <fieldset id="pizzaToppings" class="form-group" form="pizzaCraft">
                         <legend class="col-form-label col-sm-3 text-center">Toppings</legend>
