@@ -1,331 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Downtown Pizza</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="Header jumbotron">
-        <div class="navbar">
-          <a href="index.html">Home</a> <a href="about-us.html">About Us</a>
-          <a href="pizza-options.html">Our Pizza options</a>
-          <a href="Contact-Us.html">Contact Us</a>
-        </div>
-      </div>
-      <div class="card orderInput">
-        <div class="row MakeYourOrder justify-content-around">
-          <form id="pizzaCraft">
-            <div class="form-group row PizzaSelection align-items-center">
-              <label class="col-sm-3 col-form-label" for="pizzaType"
-                >Type of pizza</label
-              >
-              <select id="pizzaType" class="form-control col-sm-9">
-                <optgroup label="Meat">
-                  <option value="Chicago-Pizza">Chicago Pizza</option>
-                  <option value="NYC-Pizza">NYC Pizza </option>
-                  <option value="Neapolitan-Pizza">Neapolitan Pizza </option>
-                  <option value="Pepperoni-Pizza">Pepperoni Pizza </option>
-                </optgroup>
-                <optgroup label="Veggie">
-                  <option value="Hawaiian-Pizza">Hawaiian Pizza </option>
-                  <option value="Greek-Pizza">Greek Mama Pizza </option>
-                  <option value="Mediterranean-Pizza"
-                    >Mediterranean Pizza</option
-                  >
-                  <option value="Tasty-tomato-Pizza">Tasty Tomato Pizza</option>
-                </optgroup>
-              </select>
-            </div>
-            <div class="form-group row pizzaSize align-items-center">
-              <label class="col-sm-3 col-form-label" for="pizzaSize"
-                >Size of Pizza</label
-              >
-              <select id="pizzaSize" class="form-control col-sm-9">
-                <option value="kidSize">Kids' Size</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-                <option value="familySize">FamilySize</option>
-              </select>
-            </div>
-            <div class="form-group row align-items-center">
-              <label class="col-sm-3 col-form-label" for="pizzaCrust"
-                >Type of Crust</label
-              >
-              <select id="pizzaCrust" class="form-control col-sm-9">
-                <option value="Thin">Thin crust</option>
-                <option value="Thick">Thick crust</option>
-                <option value="Deep">Deep crust</option>
-                <option value="Stuffed">Stuffed crust</option>
-              </select>
-            </div>
-            <fieldset id="pizzaToppings" class="form-group" form="pizzaCraft">
-              <div class="row Toppings align-items-center">
-                <legend class="col-form-label col-sm-3">Toppings</legend>
-                <div class="col-sm-4">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="anchovies"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Anchovies @Kes.80</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="oysters"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Smoked Oysters @Kes.200</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="sardines"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Sardines @Kes.100</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="tuna"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Tuna @Kes.80</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="mushrooms"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Mushrooms @Kes.70</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="tomatoes"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Sun-dried Tomatoes @Kes.30</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="olives"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Black Olives @Kes.100</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="bacon"
-                      type="checkbox"
-                      value="30"
-                    />
-                    <label class="form-check-label" for="chicken"
-                      >Bacon slices @Kes.80</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="beef"
-                      type="checkbox"
-                      value="50"
-                    />
-                    <label class="form-check-label" for="bacon"
-                      >Ground beef @Kes.50</label
-                    >
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="sausage"
-                      type="checkbox"
-                      value="45"
-                    />
-                    <label class="form-check-label" for="pepperoni"
-                      >Sausage rings @Kes.50</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="ham"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="ham"
-                      >Ham slices @Kes.80</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="pepperoni"
-                      type="checkbox"
-                      value="20"
-                    />
-                    <label class="form-check-label" for="mushroom"
-                      >Pepperoni rings @Kes.70</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="chicken"
-                      type="checkbox"
-                      value="60"
-                    />
-                    <label class="form-check-label" for="pineapple"
-                      >Chicken chunks @Kes.50</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="shrimp"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Shrimp @Kes.100</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="basil"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Basil @Kes.50</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="egg-plant"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Grilled Egg-plant @Kes.50</label
-                    >
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      id="green-pepper"
-                      type="checkbox"
-                      value="70"
-                    />
-                    <label class="form-check-label" for="cheese"
-                      >Roasted Green Pepper @Kes.30</label
-                    >
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <div id="pizzaCount" class="form-group row align-items-center">
-              <label class="col-sm-3 col-form-label" for="pizzaCount"
-                >Number of Pizzas</label
-              >
-              <input class="form-control col-sm-9" type="number" min="1" />
-            </div>
-            <!-- <div class="form-group mr-n3">
-            <button class="btn btn-outline-success form-control pizza-order" type="submit">Place Your Order</button>
-          </div>
-          <div class="form-group mr-n3">
-            <button class="btn btn-outline- form-control pizza-order" type="submit">Order Delivery</button>
-          </div> -->
-            <div class="pizza-order form-group mr-n3">
-              <button type="submit" class="btn btn-outline-danger">
-                Place Order!
-              </button>
-            </div>
-            <div class="Delivery form-group mr-n3">
-              <button type="submit" class="btn btn-outline-warning">
-                Delivery?
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="customerContactDetails">
-        <div class="customerdata row">
-          <div class="col-sm-3"></div>
-          <form action="" class="form-group col-sm-6 data">
-            <input
-              type="text"
-              class="form-control cdata"
-              placeholder="Enter your Name:"
-            /><br /><br />
-            <input
-              type="text"
-              class="form-control cdata"
-              placeholder="Enter your phone number: "
-            /><br /><br />
-            <input
-              type="text"
-              class="form-control cdata"
-              placeholder="Enter the location: "
-            /><br /><br />
-            <button class="btn bg-info text-center d-block mx-auto go">
-              Make Delivery
-            </button>
-          </form>
-        </div>
-      </div>
-      <div class="orderSummary" id="sum-order">
-        <h5 class="text-center" id="summary">Order Checkout</h5>
-        <h6 class="text-center summary">Your order is as follows:</h6>
-        <ol id="list" class="text-center sum"></ol>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Amaranth|Great+Vibes|Lobster&display=swap" rel="stylesheet">
+  <title>Your Style Pizza</title>
+</head>
+<body>
+  <div class="container">
+    <div class="Header jumbotron">
+      <div class="navbar">
+        <a href="index.html">Home</a> <a href="about-us.html">About Us</a>
+        <a href="pizza-options.html">Our Pizza options</a>
+        <a href="Contact-Us.html">Contact Us</a>
       </div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+    <div class="card orderInput">
+      <div class="row MakeYourOrder justify-content-around">
+        <form id="pizzaCraft">
+          <div class="form-group row PizzaSelection align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaType"
+              >Type of pizza</label
+            >
+            <select id="pizzaType" class="form-control col-sm-9">
+              <optgroup label="Meat">
+                <option value="Chicago-Pizza">Chicago Pizza</option>
+                <option value="NYC-Pizza">NYC Pizza </option>
+                <option value="Neapolitan-Pizza">Neapolitan Pizza </option>
+                <option value="Pepperoni-Pizza">Pepperoni Pizza </option>
+              </optgroup>
+              <optgroup label="Veggie">
+                <option value="Hawaiian-Pizza">Hawaiian Pizza </option>
+                <option value="Greek-Pizza">Greek Mama Pizza </option>
+                <option value="Mediterranean-Pizza"
+                  >Mediterranean Pizza</option
+                >
+                <option value="Tasty-tomato-Pizza">Tasty Tomato Pizza</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-group row pizzaSize align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaSize"
+              >Size of Pizza</label
+            >
+            <select id="pizzaSize" class="form-control col-sm-9">
+              <option value="kidSize">Kids' Size</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="familySize">FamilySize</option>
+            </select>
+          </div>
+          <div class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaCrust"
+              >Type of Crust</label
+            >
+            <select id="pizzaCrust" class="form-control col-sm-9">
+              <option value="Thin">Thin crust</option>
+              <option value="Thick">Thick crust</option>
+              <option value="Deep">Deep crust</option>
+              <option value="Stuffed">Stuffed crust</option>
+            </select>
+          </div>
+          <fieldset id="pizzaToppings" class="form-group" form="pizzaCraft">
+            <div class="row Toppings align-items-center">
+              <legend class="col-form-label col-sm-3">Toppings</legend>
+              <div class="col-sm-4">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="anchovies"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Anchovies @Kes.80</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="oysters"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Smoked Oysters @Kes.200</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="sardines"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Sardines @Kes.100</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="tuna"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Tuna @Kes.80</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="mushrooms"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Mushrooms @Kes.70</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="tomatoes"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Sun-dried Tomatoes @Kes.30</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="olives"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Black Olives @Kes.100</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="bacon"
+                    type="checkbox"
+                    value="30"
+                  />
+                  <label class="form-check-label" for="chicken"
+                    >Bacon slices @Kes.80</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="beef"
+                    type="checkbox"
+                    value="50"
+                  />
+                  <label class="form-check-label" for="bacon"
+                    >Ground beef @Kes.50</label
+                  >
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="sausage"
+                    type="checkbox"
+                    value="45"
+                  />
+                  <label class="form-check-label" for="pepperoni"
+                    >Sausage rings @Kes.50</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="ham"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="ham"
+                    >Ham slices @Kes.80</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="pepperoni"
+                    type="checkbox"
+                    value="20"
+                  />
+                  <label class="form-check-label" for="mushroom"
+                    >Pepperoni rings @Kes.70</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="chicken"
+                    type="checkbox"
+                    value="60"
+                  />
+                  <label class="form-check-label" for="pineapple"
+                    >Chicken chunks @Kes.50</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="shrimp"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Shrimp @Kes.100</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="basil"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Basil @Kes.50</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="egg-plant"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Grilled Egg-plant @Kes.50</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    id="green-pepper"
+                    type="checkbox"
+                    value="70"
+                  />
+                  <label class="form-check-label" for="cheese"
+                    >Roasted Green Pepper @Kes.30</label
+                  >
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div id="pizzaCount" class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaCount"
+              >Number of Pizzas</label
+            >
+            <input class="form-control col-sm-9" type="number" min="1" />
+          </div>
+          <!-- <div class="form-group mr-n3">
+          <button class="btn btn-outline-success form-control pizza-order" type="submit">Place Your Order</button>
+        </div>
+        <div class="form-group mr-n3">
+          <button class="btn btn-outline- form-control pizza-order" type="submit">Order Delivery</button>
+        </div> -->
+          <div class="pizza-order form-group mr-n3">
+            <button type="submit" class="btn btn-outline-danger">
+              Place Order!
+            </button>
+          </div>
+          <div class="Delivery form-group mr-n3">
+            <button type="submit" class="btn btn-outline-warning">
+              Delivery?
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="customerContactDetails">
+      <div class="customerdata row">
+        <div class="col-sm-3"></div>
+        <form action="" class="form-group col-sm-6 data">
+          <input
+            type="text"
+            class="form-control cdata"
+            placeholder="Enter your Name:"
+          /><br /><br />
+          <input
+            type="text"
+            class="form-control cdata"
+            placeholder="Enter your phone number: "
+          /><br /><br />
+          <input
+            type="text"
+            class="form-control cdata"
+            placeholder="Enter the location: "
+          /><br /><br />
+          <button class="btn bg-info text-center d-block mx-auto go">
+            Make Delivery
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="orderSummary" id="sum-order">
+      <h5 class="text-center" id="summary">Order Checkout</h5>
+      <h6 class="text-center summary">Your order is as follows:</h6>
+      <ol id="list" class="text-center sum"></ol>
+    </div>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
 </html>
