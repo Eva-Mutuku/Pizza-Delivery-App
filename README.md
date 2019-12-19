@@ -12,7 +12,7 @@ Pizza mad house is a webpage where users can order pizza online and have it deli
  > Eva M. Mutuku
 ​
  ## Setup.
- > git clone https://github.com/Eva-Mutuku/Pizza-Delivery-App
+ > git clone https://eva-mutuku.github.io/Pizza-Delivery-App/
  
  > extract the file.
  
@@ -36,7 +36,7 @@ Pizza mad house is a webpage where users can order pizza online and have it deli
   * Markdown
 ​
 ## Known Bugs
-* I haven't encountered any bugs.
+* The alert message is giving a NAN on fullprice.
 ​
 ## License
 > MIT License &copy 2019 Eva M. Mutuku. 
