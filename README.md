@@ -1,9 +1,9 @@
 
-# PIZZA MAD HOUSE
+# Palacina Pizza
 [Check it out](https://github.com/Eva-Mutuku/Pizza-Delivery-App.)
 ​
 ## Description.
-Pizza mad house is a webpage where users can order pizza online and have it delivered at their place of choice.
+Palacina Pizza is a webpage where users can order pizza online and have it delivered at their place of choice.
 
 ## Codebeat grading
 * [![codebeat badge](https://codebeat.co/badges/6af13f00-bb64-4722-9612-dff4c65878e3)](https://codebeat.co/projects/github-com-eva-mutuku-delani-studio-gh-pages)
